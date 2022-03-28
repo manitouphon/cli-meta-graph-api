@@ -51,10 +51,11 @@ r = requests.get(requestURL)
 data = r.text
 parsed = json.loads(data)
 
+print (json.dumps(parsed, indent=4 ))
 
+#this is just some additioal in case path "posts" is used.
 if path == "posts":
     prtid = query_yes_no("Do you want to print out the posts ID ?")
-    print (prtid)
     if prtid == True:
         print("Printing all IDs: ")
         posts = parsed["data"]
